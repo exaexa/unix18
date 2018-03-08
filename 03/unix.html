@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>NSWI095 Úvod do UNIXu @ e-x-a.org</title>
+<link rel='stylesheet' type="text/css" href="/_cmsdata/style.css">
+<link rel='icon' type="image/ico" href="/_cmsdata/favicon.ico">
+</head>
+<body>
+<div id='pagetop'><div id='logo'></div><div id='pagetitle'><span>e-x-a.org &raquo;</span> NSWI095 Úvod do UNIXu</div></div><div id='pagearea'><div id='page'>
+<div id='menu'>
+<a href="/" class='homelink'>&raquo; home</a>
+<a href="/mff/" class='direntry'>&#10551; mff</a>
+<a href="/mff/unix18/" class='direntry'>&#10551; unix18</a>
+<span>@ home</span>
+<a href="/projects/">Projects</a>
+<a href="/mff/">Teaching, research</a>
+<a href="/stuff/">Various stuff</a>
+<a href="/login/">Login</a>
+
+</div>
+<div id='content'>
+	<p>Informace o cvičení k přednášce Úvod do UNIXu &#8212; SU2, čtvrtky ve 14:00, LS 2017/18.</p>
+
+	<ul>
+		<li>V případě čehokoliv mi napište mail na kratochvil@ksi.mff.cuni.cz</li>
+		<li>Materiál ke čtení:
+	<ul>
+		<li>Knížka Libora Forsta &#8220;Shell v příkladech&#8221; jde půjčit v knihovně (dostupné množství se před zkouškovým výrazně ztenčuje)</li>
+		<li><a href="http://www.tldp.org/LDP/abs/html/">Advanced Bash Scripting Guide</a></li>
+		<li>StackOverflow a wikipedia (s rezervou!)</li>
+		<li>Po internetu se povaluje hromada materiálu typu &#8216;Sed by example&#8217;, &#8216;Awk by example&#8217;, apod. Manuálové stránky jsou taky online.</li>
+	</ul></li>
+	</ul>
+
+	<h3>Požadavky na zápočet</h3>
+
+	<p>Zápočet je potřeba k přihlášení na zkoušku, všichni by ho měli dostat ideálně
+do začátku zkouškového. Předem upozorňuju, že přes zkouškové a v září budu k
+dispozici tak napůl.</p>
+
+	<p>Zásadním účelem zápočtu je zajistit, že až půjdete ke zkoušce, tak odejdete s
+úspěchem a zkoušející z toho nebude muset mít těžkou hlavu a černé myšlenky. O
+této schopnosti mě můžete přesvědčit jakýmkoliv dostatečně rigorózním způsobem,
+doporučené postupy jsou ale tyto:</p>
+
+	<ul>
+		<li><strong>Spolehlivá metoda</strong>: Zápočet lze dostat za domácí úkoly, zápočťák a aktivitu.
+	<ul>
+		<li>Domácí úkoly budu zadávat každý týden, budou obecně dost jednoduché, odevzdávat je budeme nově přes git. Bude potřeba sesbírat aspoň 50% bodů. Termín je vždy do poslední půlnoci předcházející dalšímu cvičením.</li>
+		<li>Zápočťák je jakýkoliv program, který implementuje něco zajímavého/užitečného/zábavného v shellu, awku, sedu, nebo podobné unixovině, není k dispozici v miliardě kopií na internetu a má rozumný rozsah. Více viz. níže.</li>
+		<li>Aktivita bude probíhat podobně jako na mých ostatních cvičeních &#8212; za programování na projektor/nějakou práci u tabule dostanete bod. Doporučuju nemít nápadně málo aktivitních bodů.</li>
+	</ul></li>
+		<li><strong>Rychlá a těžká metoda</strong>: Pokud se nechcete zdržovat s něčím co už umíte, můžete na jednom z prvních cvičení napsat těžkou písemku spočívající ve vypracování nějakého pitoreskního ale zvládnutelného zadání v shellu/sedu/awku v časovém limitu cvičení. Dejte mi předem vědět mailem, ať vyrobím nějaké zadání. Zápočet za zvládnutí a rozumný kód je okamžitý.</li>
+	</ul>
+
+	<p><a href="/mff/unix18/vysledky.html"><strong>Mezivýsledky můžete sledovat zde</strong>.</a></p>
+
+	<h3>Témata na zápočťáky</h3>
+
+	<p>Téma zápočťáku je potřeba <strong>dohodnout do 22. 4. 2018.</strong> Pokud jste už vytvořili něco jiného co s UNIXem souvisí, neváhejte to použít jako zápočťák.</p>
+
+	<p><strong>VHODNÉ</strong>:</p>
+
+	<p>Rozsah: orientačně cca nad 100 a pod 400 řádků kódu. Víc není problém, ale hrozí, že toho bude zbytečně moc. Míň taky není problém, pokud kód bude dostatečně funkčně nahušťěný.</p>
+
+	<p>Témata:</p>
+
+	<ul>
+		<li>zábavné náhrady nějakých shellových příkazů (simple parallel make, tiny almost-git, ...)</li>
+		<li>databázoviny
+	<ul>
+		<li>systém na evidenci nějakých věcí (knihovna, fotbalova liga, ...) s &#8220;konzolovým&#8221; &#8220;user&#8221; &#8220;interfacem&#8221;</li>
+		<li>mailing list management daemon</li>
+	</ul></li>
+		<li>časoviny a kalendářoviny
+	<ul>
+		<li>ToDo manager</li>
+		<li>miniaturní cron daemon</li>
+		<li>kreslítko kalendáře, v něčem lepší než standardní <code>cal</code></li>
+	</ul></li>
+		<li>hry
+	<ul>
+		<li>textové hry</li>
+		<li>multiplayerové hry (piškvorky, chat, <span class="caps">MUD</span>, ...) pomocí netcatu</li>
+		<li>něco co kreslí do terminálu skoro grafiku (inspirace viz. <a href="https://github.com/exaexa/rash">rash</a>, <a href="https://artax.karlin.mff.cuni.cz/~brain/0verkill/">0verkill</a>, nethack)</li>
+	</ul></li>
+		<li>zálohovací nebo verzovací věci (viz. <code>rdiff-backup</code> apod.)</li>
+		<li>programování
+	<ul>
+		<li>zvýrazňovače, zarovnávače, zkrášlovače a čističe kódu</li>
+		<li>interpretery, např. interpret Logo (želvičky) nebo něčeho podobného (robot karel?) &#8212; vhodné, rychlé a jednoduché řešení je přepsáním zdrojáku sedem do nějakého jiného jazyka a spuštění výsledku již existujícím interpreterem/kompilátorem.</li>
+		<li>build systémy/balíčkovače (např. něco co pro projekt v C++ vygeneruje přenosný Makefile, (anti)inspirace viz. např. CMake)</li>
+	</ul></li>
+	</ul>
+
+	<p><strong>NEVHODNÉ</strong>:</p>
+
+	<ul>
+		<li>cokoliv co jde vygooglit v mnoha a mnoha kopiích</li>
+		<li>zadání jehož smysl nepochopím do 3 minut</li>
+		<li>řešení které celé nepřečtu do 20 minut</li>
+	</ul>
+
+	<h5>Hodnocení zápočťáků</h5>
+
+	<p>Hodnotí se následující aspekty (seřazené sestupně podle důležitosti). Pokud máte přebytek aktivitních bodů, můžete ho vyměnit za úlevy na méně důležitých bodech:</p>
+
+	<ul>
+		<li>nejdůležitější součást &#8212; odevzdání ve formě podle návodu dole</li>
+		<li>rozsah (Horní hranice: dokážete to celé vysvětlit za 10 minut a za dalších 15 minut jde prozkoumat celý zdrojový kód. Spodní hranice: složitost by měla převyšovat domácí úkoly z konce semestru.)</li>
+		<li>pokrytí funkcionality demonstrativním kódem a dokumentací (do minuty si to můžu úspěšně celé vyzkoušet)</li>
+		<li>absence programovacích chyb (tj. např. program nejde rozbít špatným vstupem)</li>
+		<li>dodržení standartnosti v tom, jak se program chová uvnitř (např. kde má uložená pevná data a konfiguraci, dočasná data, jestli správně používá ostatní programy)</li>
+		<li>dodržení UNIXové &#8220;slušnosti&#8221; interfacu (tj. nahlášení chyby exit kódem, standartní reakce na standartní optiony (<code>--help</code>), chybové hlášky na stderr)</li>
+		<li>kvalita kódu (odsazování, komentáře, názvy proměnných, jde to přečíst/pochopit bez bolení očí/hlavy)</li>
+	</ul>
+
+	<h5>Jak odevzdat zápočťák?</h5>
+
+	<p>Pošlete mi ho v balíku <code>.tar.gz</code>. Balík by měl obsahovat jediný adresář s názvem popisujícím vaše téma a jméno (např. <code>drticka_virtualniho_odpadu_josef_novak/</code>, v něm pak:</p>
+
+	<ul>
+		<li><code>demo</code> skript nebo <code>README.demo</code> &#8212; na nějakých mini testovacích datech ukažte, co program umí, případně vysvětlete, jak program rychle použít</li>
+		<li>testovací data k předchozímu, pokud jsou potřeba</li>
+		<li>program (nebo víc programů), který kromě dohodnuté funkcionality správně reaguje na standartní optiony</li>
+		<li><code>README</code> &#8212; dokumentaci která popisuje co program jak dělá. Součástí dokumentance je &#8220;programátorská dokumentace&#8221; a.k.a. &#8220;internals&#8221; a.k.a. &#8220;hacking guide&#8221;, popis vnitřního rozložení programu do celků, poskytovaných interfaců a držených invariantů mezi nimi, a popis toku dat skrz program. Struktura P.D. se liší program od programu, ale obecné pravidlo je, že programátor s podobnou úrovní jako autor by z ní měl během cca 15 minut a) zjistit co a jak dělá <strong>každá</strong> součást kódu programu, b) být schopný v programu udělat malou rozumnou úpravu funkcionality a nerozbít to. Komentáře nemusí být (v extrémně přehledných případech) potřeba, ale většinou je vhodné kód pořádně popsat. Dobrý systém komentářů výrazně zjednodušuje programátorskou dokumentaci. Pokud se vám chce, <span class="caps">README</span> můžete formátovat jako manuálovou stránku.</li>
+	</ul>
+
+	<h3>Odevzdávání domácích úkolů</h3>
+
+	<p>Stručný návod:
+	<ol>
+		<li>Vytvořte si repozitář klikáním na <a href="http://github.com">GitHub</a> nebo <a href="http://gitlab.com">GitLab</a> nebo případně na <a href="http://bitbucket.org/product">BitKyblík</a>.</li>
+		<li>Někde tam bude link na naklonování, použijte ho takhle: <code>git clone https://github.com/neconeco/reporepo.git</code>. Do odpovídajícího adresáře vám to stáhne obsah (prázdného) gitového repozitáře.</li>
+		<li>Ve výsledném adresáři vyrobte domácí úkol, přidejte ho stejně jako na hodině (<code>git add</code>, <code>git commit</code>).</li>
+		<li>Pomocí <code>git push</code> výsledek odešlete na github. Poprvé možná budete potřebovat něco složitějšího, asi jako <code>git push -u origin master</code>, program vás v případě potřeby upozorní sám. Detaily viz. <code>git push --help</code>.</li>
+		<li>Mailem mi pošlete gitové <span class="caps">URL</span>, pomocí kterého si budu moct repozitář naklonovat (abych úkoly mohl zkontrolovat).</li>
+	</ol>
+Pokud nemáte po ruce žádný unix/linux, repozitář si samozřejmě můžete naklonovat i když jste přihlášení přes <span class="caps">SSH</span> v labu a pracovat na něm jen přes <span class="caps">SSH</span>. Soubory jdou případně editovat i přes webové rozhraní GitHubu/GitLabu.</p>
+
+	<p>Běžné použití gitu je pěkně popsané <a href="https://www.kernel.org/pub/software/scm/git/docs/giteveryday.html">tady</a>.</p>
+
+	<p>Tutorial podobný tomu co jsme dělali na cvičení je <a href="https://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">tady</a>.</p>
+
+	<p>Vizuální reference o tom <a href="https://marklodato.github.io/visual-git-guide/index-en.html">co se vlastně děje při různých příkazech</a> (doporučuju si aspoň projít obrázky!)</p>
+
+	<p>Pozn. Repozitáře nemusíte zakládat jako veřejné. Při nastavování všech možných správných přístupů pro neveřejné repozitáře se může hodit znát <a href="https://github.com/exaexa">jméno mého účtu na GitHubu</a> nebo <a href="/mff/unix18/mk.pub">můj <span class="caps">SSH</span> klíč</a>. Případně, pokud máte repo veřejné a zároveň chcete mít možnost zabránit ostatním, aby Vaše řešení opisovali (což jim samozřejmě nepomůže, protože to poznám), <a href="https://pgp.mit.edu/pks/lookup?op=vindex&#38;search=0xE2CF017C924B3226">můj <span class="caps">PGP</span> klíč je tady</a>.
+Btw.: <a href="https://education.github.com/pack">GitHub studentům poskytuje privátní repozitáře zadarmo</a>.</p>
+
+	<h3>Průběh cvičení</h3>
+
+	<p><b>Věci co jsme vyrobili na cvičeních</b> <a href="https://github.com/exaexa/unix18"><b>budou tady</b></a>.</p>
+
+	<h5>1 (22. 2. 2018)</h5>
+
+	<p>Crash-course pozorování černého terminálu. Jak použít <span class="caps">SSH</span>.</p>
+
+	<p>Soubory, adresáře, cesty, koncept programu, <code>ls</code>, <code>cd</code>, <code>cat</code>, <code>w</code>, <code>echo</code>, <code>rmidir</code>, <code>mkdir</code>, <code>rm</code>, <code>rm -r</code>, <code>cp -r</code>, <code>mv</code>, <code>ls -a</code>, glob.</p>
+
+	<p>Editování souborů pomocí <code>vi</code> (používejte libovolný editor, ale <code>vi</code> byste
+měli umět použít alespoň jako notepad: <code>vi soubor</code>, <code>[i]</code>, editování, <code>[esc]</code>,
+<code>:wq</code> nebo <code>:q!</code>).</p>
+
+	<p>Stihli jsme si vyzkoušet <code>&#62;</code>, <code>&#60;</code> a <code>&#62;&#62;</code>.</p>
+
+	<p><strong>Domácí úkol 1 (termín je prodloužený až na třetí cvičení)</strong>: Zařiďte si gitový repozitář podle návodu nahoře, a pošlete mi na něj link (mailem). Ve svém repozitáři pak vyrobte adresář <code>u01</code> a v něm prázdný soubor <code>ahoj</code>, obojí přidejte do správy verzí, commitněte a pošlete do repozitáře. Případně to na githubu/gitlabu můžete &#8220;naklikat&#8221; i přes webové rozhraní.</p>
+
+	<p><strong>Bonusový domácí úkol</strong>: Uvařte si čaj nebo kafe a spusťte a projděte si <code>vimtutor</code>.</p>
+
+	<h5>2 (29. 2. 2018)</h5>
+
+	<p>Slepování programů pomocí <code>|</code>, jednoduché filtry: <code>less</code>, <code>grep</code>, <code>wc</code>, viděli jsme <code>head</code>, <code>tail</code>.</p>
+
+	<p>Jednoduché shellové skripty, <code>sh</code>, <code>bash</code>, <code>#!</code>, <code>chmod +x</code>.</p>
+
+	<p>Rychloúvod do správy verzí pomocí programu <code>git</code>.</p>
+
+	<p><strong>DÚ</strong>: Napište skript, který pomocí <code>fpc</code> skompiluje pascalový zdrojový kód v souboru <code>program.pas</code> na program <code>program</code>. Výsledný program spustí, z jeho výstupu odstraní všechny řádky obsahující cokoliv jiného než čísla a mezery, a ze zbytku výstupu vypíše prvních 5 řádek. Po doběhnutí <code>program</code> i dočasný mezisoubor <code>program.o</code> smaže. Skript pojmenujte <code>runpascal</code> a uložte ho do svého repozitáře do adresáře <code>u02</code>.</p>
+
+	<h5>3 (8. 3. 2018)</h5>
+
+	<ul>
+		<li>programování v shellu: proměnné a expanze, uvozovky vs. apostrofy, <code>test</code>, <code>echo</code>, <code>read</code>, <code>if</code>, <code>while</code>, <code>for</code>, <code>&#38;&#38;</code>, <code>||</code>, <code>exit</code>, <code>shift</code></li>
+		<li>regexy</li>
+	</ul>
+
+	<h5>Věci ve frontě</h5>
+
+	<ul>
+		<li>souboroviny: <code>find</code>, <code>du</code>, <code>ln</code>, <code>stat</code>, <code>chmod</code>, <code>chown</code></li>
+		<li>archivy: <code>tar</code>, <code>gzip</code>, <code>bzip2</code></li>
+		<li><code>patch</code> a <code>diff</code></li>
+		<li>tabulkové DSL: <code>head</code> <code>tail</code> <code>cut</code> <code>sort</code> <code>paste</code> <code>uniq</code> <code>join</code> <code>comm</code></li>
+		<li><code>make</code></li>
+		<li><code>ssh</code>, <code>scp</code>, <code>rsync</code></li>
+		<li><code>dd</code>, <code>tee</code>, <code>tr</code></li>
+		<li><code>sed</code></li>
+		<li><code>awk</code></li>
+		<li>procesy: <code>ps</code>, <code>wait</code>, <code>kill</code></li>
+	</ul>
+
+	<h3>Bonusy</h3>
+
+	<ul>
+		<li>Sed je T-kompletní (tzn. &#8220;jde v něm naprogramovat všechno&#8221;). Důkazů je hodně, ale <a href="https://github.com/svbatalov/bf.sed">tenhle</a> rozhodně bude nejohyzdnější. Jen v sedu (přehazováním textu za pomoci regulárních výrazů) jde napsat třeba <a href="http://sed.sourceforge.net/local/games/arkanoid.sed.html">arkanoid</a> nebo <a href="http://sed.sourceforge.net/grabbag/scripts/dc.sed">kalkulačka s neomezenou přesností</a> . Jestli to je rozumné se neví.</li>
+		<li><a href="http://catb.org/esr/writings/taoup/html/">The Art Of <span class="caps">UNIX</span> Programming</a> (online verze). Překvapivě stále více než aktuální. Trochu filozofické. Obsahuje odpovědi na většinu položitelných otázek začínajících na &#8220;Proč se v UNIXu proboha &#8230;.?&#8221; a užitečný náhled do historie a evoluce současného počítačového světa.</li>
+	</ul>
+
+	<h5>Jak se připojit do labu z domova?</h5>
+
+	<p>Z unixu: <code>ssh LOGIN@u-pl0.ms.mff.cuni.cz</code>. Místo <span class="caps">LOGIN</span> napíšete své uživatelské jméno, na heslo se vás to zeptá.</p>
+
+	<p>Z windows: Stáhněte si <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a>. Spusťte ji, do &#8220;Host name&#8221; napište <code>u-pl0.ms.mff.cuni.cz</code>. Na uživatelské jméno a heslo se to zeptá samo při připojování.</p>
+
+	<p>Z mobilu: <a href="https://play.google.com/store/apps/details?id=com.sonelli.juicessh&#38;hl=en">droid</a>, <a href="https://itunes.apple.com/us/app/iterminal-ssh-telnet-client/id581455211">jablko</a></p>
+
+	<p>Místo <code>u-pl0</code> můžete použít i jiná čísla počítačů: <code>u-pl1</code>, <code>u-pl2</code> až cca. <code>u-pl23</code>.</p></div>
+</div>
+<div class='clearboth'></div>
+</div>
+<div id='footer'>
+Last page modification: 2018-03-03 13:57:36 +0100 |  copy<i>left</i> 2018</div>
+
+</body>
+</html>
