@@ -1,0 +1,48 @@
+#!/bin/bash
+
+mode=tolower
+
+do_dir () {
+	# lower -> upper
+	regex='/[^/A-Z]*$'
+	tr="tr a-z A-Z"
+
+	# upper -> lower
+	if [ $mode = tolower ] ; then
+		regex='/[^/a-z]*$'
+		tr="tr A-Z a-z"
+	fi
+
+	find "$1" -type f | grep '/[^/]*[a-zA-Z][^/]*$' | grep "$regex" | while read fn ; do
+		dir=`dirname $fn`
+		file=`basename $fn | $tr`
+		result="$dir/$file"
+		if [ -e "$result" ] ; then
+			echo "Can't rename '$fn' because '$result' already exists" >&2
+		else
+			mv -f "$fn" "$result"
+		fi
+	done
+}
+
+dirlist=`mktemp`
+has_dir=no
+while [ -n "$1" ] ; do
+	if [ "$1" = "-r" ] ;
+	then mode=toupper
+	else
+		echo "$1" >> "$dirlist"
+		has_dir=yes
+	fi
+	shift
+done
+
+if [ $has_dir = no ] ; then
+	do_dir .
+else
+	while read d ; do
+		do_dir "$d"
+	done < "$dirlist"
+fi
+
+rm -f "$dirlist"
