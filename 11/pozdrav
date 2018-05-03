@@ -1,0 +1,100 @@
+#!/bin/bash
+pocet_opakovani=3
+do_help=no
+ret_val=0
+greeting_type=""
+leader_name=leader
+while [ -n "$1" ]; do
+	case "$1" in
+	--help)
+		do_help=yes
+		break
+		;;
+	-j)	shift
+		if [ -n "$1" ] ; then
+			leader_name="$1"
+		else
+			echo "chybi jmeno vladce" >&2
+			ret_val=1
+			break 
+		fi
+		;;
+
+	-g)
+		if [ -n "$greeting_type" ]; then
+			echo "GTERROR" >&2 
+			ret_val=1
+			break
+		fi
+
+		greeting_type=generic
+ 		;;
+	-o)
+		if [ -n "$greeting_type" ]; then
+			echo "GTERROR" >&2 
+			ret_val=1
+			break
+		fi
+
+		greeting_type=odchod
+ 		;;
+	-p)
+		if [ -n "$greeting_type" ]; then
+			echo "GTERROR" >&2 
+			ret_val=1
+			break
+		fi
+
+		greeting_type=prichod
+ 		;;
+	
+	-n)	shift
+		opakovani="$1"
+		if [ "$opakovani" -gt 0 ] 2> /dev/null
+		then
+			pocet_opakovani=$opakovani
+		else
+			echo 'Spatne cislo opakovani' >&2
+			ret_val=2
+			break
+		fi
+		;;
+
+	
+	*) 	
+		ret_val=1
+		break
+		;;
+
+		
+	esac
+	shift
+done
+
+if [ -z $greeting_type ]
+then 
+	echo "Nevybran pozdrav" >&2
+	ret_val=3
+fi
+
+if [[ $do_help = yes || $ret_val -gt 0 ]]; then
+	echo "napoveda zatim neni" >&2
+	exit $ret_val
+fi
+
+i=0
+while [ $i -lt $pocet_opakovani ]
+do
+	case $greeting_type in
+	generic) echo "Hello, $leader_name!" ;;
+	odchod) echo "Farewell, $leader_name!" ;;
+	prichod) echo "Greetings, $leader_name my lord!" ;;
+	esac
+	i=$((i+1))
+done
+
+
+
+
+
+
