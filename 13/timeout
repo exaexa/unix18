@@ -1,0 +1,19 @@
+#!/bin/bash
+
+$1 &
+
+pid=$!
+timeout=5
+echo "$pid"
+ps
+
+if [ -n "$2" ]
+then
+	timeout=$2
+fi
+
+#sleep $timeout
+#kill -KILL $pid
+
+wait $pid
+echo "$?"
