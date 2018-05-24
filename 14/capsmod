@@ -1,0 +1,54 @@
+#!/bin/bash
+reverse=no
+didsth=no
+
+procdir(){
+	if [ `expr match "$1" '^[^-]'` -eq 0 ]; then
+		echo "nechcu"
+		return 1
+	fi
+	if [ $reverse = "yes" ]; then
+		trcmd="tr [:lower:] [:upper:]"
+		reg='^[^A-Z]*$'
+	else 
+		trcmd="tr [:upper:] [:lower:]"
+		reg='^[^a-z]*$'
+
+	fi
+	didsth=yes
+	find "$1" -type f | while read path ;do
+		dir=`dirname "$path"`
+		fn=`basename "$path"`
+		
+		match=`expr match "$fn" "$reg"`
+
+		if [ $match -gt 0 ]; then
+			
+			lfn=`echo X"$fn" | $trcmd | tail -c +2`  
+			if [ -e "$dir/$lfn" ]; then 
+				echo "Vynechavame soubor $dir/$fn protoze existuje."
+				continue
+			fi
+			mv "$dir/$fn" "$dir/$lfn"
+			if [ $? -gt 0 ]; then
+				echo "presunuti nelze provest"
+			fi
+		fi
+
+	done
+	echo "zpracovavam adresar $1"
+
+}
+
+while [ -n "$1" ]; do
+	case "$1" in
+		-r) reverse=yes;;
+		*) procdir "$1";;
+	esac
+	shift
+done
+
+if [ "$didsth" = 'no' ]; then
+	echo 'bez parametru'
+	exit 1
+fi
